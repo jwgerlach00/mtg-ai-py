@@ -15,13 +15,13 @@ class CardForgeClient:
         self.logger = logging.getLogger(self.__class__.__name__)
         self.session = requests.Session()
         
-    def simulate(self, numGames: int, numRoundsPerGame: int, deck1Name: str, deck2Name: str) -> str:
+    def simulate(self, num_games: int, num_rounds_per_game: int, deck1_name: str, deck2_name: str) -> str:
         url = urljoin(self.api_stem, "simulate")
         params = {
-            "numGames": numGames,
-            "numRoundsPerGame": numRoundsPerGame,
-            "deck1Name": deck1Name,
-            "deck2Name": deck2Name
+            "numGames": num_games,
+            "numRoundsPerGame": num_rounds_per_game,
+            "deck1Name": deck1_name,
+            "deck2Name": deck2_name
         }
         
         self.logger.info(f"Requesting simulation.")
