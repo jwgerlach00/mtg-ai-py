@@ -2,7 +2,6 @@ import logging
 import os
 import requests
 from urllib.parse import urljoin
-from typing import Any, Dict
 from dotenv import load_dotenv
 
 
@@ -14,17 +13,17 @@ class DeckGeneratorClient:
     A client to interact with the Deck Generator API.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initialize the DeckGeneratorClient.
 
         :param api_stem: The base URL of the API.
         """
-        self.api_stem = os.getenv("API_STEM")
+        self.api_stem = os.getenv("DECK_GENERATOR_API_STEM")
         self.logger = logging.getLogger(self.__class__.__name__)
         self.session = requests.Session()
 
-    def generate(self, num_decks: int, min_num_colors: int, max_num_colors: int) -> Dict[str, Any]:
+    def generate(self, num_decks: int, min_num_colors: int, max_num_colors: int) -> str:
         """
         Generate decks with the specified parameters.
 
@@ -54,5 +53,4 @@ class DeckGeneratorClient:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     client = DeckGeneratorClient()
-    response = client.generate(2, 2, 3)
-    print(response)
+    response = client.generate(4, 2, 3)

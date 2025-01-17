@@ -9,7 +9,11 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080]
+	"forwardPorts": [8080],
+
+	"remoteEnv": {
+		"PYTHONPATH": "/workspaces/mtg-ai-py/src"
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
