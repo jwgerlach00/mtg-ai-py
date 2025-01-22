@@ -1,5 +1,7 @@
 # AI-Powered "Magic: The Gathering" Deck Generator and Optimizer
 
+[Issue board](https://github.com/users/jwgerlach00/projects/3)
+
 ### Components
 - [Procedural Deck Generator](https://github.com/jwgerlach00/mtg-deck-generator)
 
